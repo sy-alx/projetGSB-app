@@ -1,0 +1,7 @@
+{
+  "name": "projetGSB-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
