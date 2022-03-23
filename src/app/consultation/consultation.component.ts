@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultationComponent implements OnInit {
   public returnedApiData:any;
-  
+
   constructor(
     private readonly httpClient: HttpClient
   ) { }
@@ -21,7 +21,9 @@ export class ConsultationComponent implements OnInit {
         this.returnedApiData = "";
         for (let value of data){
           this.returnedApiData += value.Datevisite;
+
         }
+        console.log(this.returnedApiData);
       }
     )
    }
