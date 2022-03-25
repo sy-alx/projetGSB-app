@@ -13,17 +13,19 @@ export class ConsultationComponent implements OnInit {
     private readonly httpClient: HttpClient
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCompteRenduList();
+  }
 
   getCompteRenduList() {
     this.httpClient.get('http://localhost:8888/api/CompteRendu').subscribe(
       (data:any)=> {
         this.returnedApiData = "";
         for (let value of data){
-          this.returnedApiData += value.Datevisite;
+          this.returnedApiData +=value.Datevisite;
 
         }
-        console.log(this.returnedApiData);
+
       }
     )
    }

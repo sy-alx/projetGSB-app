@@ -1,5 +1,39 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+  <ion-title>Consultation</ion-title>
+</ion-toolbar>
 
 
+<ion-content [fullscreen]="true">
+  <!-- <table *ngIf="returnedApiData">{{returnedApiData}}</table> -->
 
-<button (click)="getCompteRenduList()">Cliquer</button>
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col" >date de visite</th>
+     
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+
+        <td *ngIf="returnedApiData"><br>{{returnedApiData}}</td>
+
+      </tr>
+
+    </tbody>
+  </table>
+ 
+
+</ion-content>
+
+
+<!-- <button (click)="getCompteRenduList()">Cliquer</button>
 {{returnedApiData}}
+ -->
+
+
