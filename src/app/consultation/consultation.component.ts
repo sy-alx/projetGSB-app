@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-consultation',
   templateUrl: './consultation.component.html',
   styleUrls: ['./consultation.component.scss'],
 })
-export class ConsultationComponent implements OnInit {
-  public returnedApiData:any;
 
+export class ConsultationComponent implements OnInit {
+  public returnedApiData:any;  
+  
   constructor(
     private readonly httpClient: HttpClient
   ) { }
@@ -18,13 +20,18 @@ export class ConsultationComponent implements OnInit {
   }
 
   getCompteRenduList() {
-    this.httpClient.get('http://localhost:8888/api/CompteRendu').subscribe(
-      (data:any)=> {
-        this.returnedApiData = "";
-        for (let value of data){
-          this.returnedApiData +=value.Datevisite;
+    interface ICompteRenduResponse {
+      id: String,
+      Datevisite: String,
+      DateCR: String
+    }  
+    this.httpClient.get(`${environment.apiUrl}/api/CompteRendu`).subscribe(
+      (data:Array<ICompteRenduResponse>)=> {  
 
-        }
+        data.map((v) => {
+          console.log(v);
+        })
+       // console.log(data);
 
       }
     )
