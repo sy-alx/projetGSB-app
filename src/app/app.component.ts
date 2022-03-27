@@ -1,4 +1,6 @@
+import { AuthenticationService } from './services/authentication.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +16,10 @@ export class AppComponent {
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
   // public labels = [];
-  constructor() {}
+  constructor(private authService: AuthenticationService, private router: Router) {}
+
+  async logout() {
+    await this.authService.logout();
+    this.router.navigateByUrl('/', { replaceUrl: true });
+  }
 }
