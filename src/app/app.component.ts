@@ -8,12 +8,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Compte rendu', url: '/folder/inbox', icon: 'mail' },
-    { title: 'Consultation', url: '/consultation', icon: 'paper-plane' },
-    { title: 'Voir mes rdv', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'ajouter des praticiens', url: '/folder/Archived', icon: 'archive' },
-    { title: 'information médicament', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Compte rendu', url: '/folder/CompteRendu', icon: 'pencil' },
+    { title: 'Consultation', url: '/consultation', icon: 'eye' },
+    { title: 'Voir mes rendez-vous', url: '/folder/MesRdv', icon: 'time' },
+    { title: 'Gestion des praticiens', url: '/folder/GestionPraticien', icon: 'person-add' },
+    { title: 'informations médicaments', url: '/folder/InformationsMedicaments', icon: 'medkit' }
   ];
   // public labels = [];
   constructor(private authService: AuthenticationService, private router: Router) {}
