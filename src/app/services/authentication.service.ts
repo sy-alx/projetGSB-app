@@ -33,8 +33,11 @@ export class AuthenticationService {
   }
  
   login(credentials: {email, password}): Observable<any> {
-    return this.http.post(`https://reqres.in/api/login`, credentials).pipe( //link api à faire `${environment.apiUrl}/api/Signin`
-      map((data: any) => data.token),
+    return this.http.post(environment.apiUrl + '/api/SignIn', credentials).pipe( //link api à faire `${environment.apiUrl}/api/Signin`
+      map((data: any) =>  {
+        console.log(data)
+        return data.token
+      }),
       switchMap(token => {
         return from(Storage.set({key: TOKEN_KEY, value: token}));
       }),
