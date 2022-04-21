@@ -16,15 +16,22 @@
   <table class="table">
     <thead>
       <tr>
-
-        <th scope="col" >date de visite</th>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Date du compte-rendu</th>
+        <th>Date de visite</th>
+        <th>Remplacant</th>
+        <th>Motif</th>
+        <th>coefconf</th>
+        <th>ImpacteVisite</th>
+        <th>Modifier</th>
      
       </tr>
     </thead>
     <tbody>
       <tr>
 
-        <td *ngIf="returnedApiData"><br>{{returnedApiData}}</td>
+        <ion-list ion-item *ngFor="let element of returnedApiData"><td>{{element}}</td></ion-list>
 
       </tr>
 

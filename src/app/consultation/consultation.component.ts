@@ -41,7 +41,7 @@ export class ConsultationComponent implements OnInit {
       (data:Array<ICompteRenduResponse>)=> {  
 
         data.map((v) => {
-          console.log(v);
+          // console.log(v);
         })
         this.returnedApiData = data;
         console.log(data);
