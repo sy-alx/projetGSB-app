@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { AuthenticationService } from "src/app/services/authentication.service";
 
 interface ICompteRenduResponse {
   id: String,
@@ -28,7 +29,8 @@ export class ConsultationComponent implements OnInit {
   public prenom;  
   
   constructor(
-    private readonly httpClient: HttpClient
+    private readonly httpClient: HttpClient,
+    private readonly authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,9 @@ export class ConsultationComponent implements OnInit {
 
   getCompteRenduList() {
 
-    this.httpClient.get(`${environment.apiUrl}/api/CompteRendu`).subscribe(
+    this.httpClient.get(`${environment.apiUrl}/api/Consultation`, {headers:{
+      'X-API-KEY': this.authenticationService.token
+    }}).subscribe(
       (data:Array<ICompteRenduResponse>)=> {  
 
         data.map((v) => {

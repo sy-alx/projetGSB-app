@@ -29,9 +29,17 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let element of returnedApiData">
 
-        <ion-list ion-item *ngFor="let element of returnedApiData"><td>{{element}}</td></ion-list>
+        <td>{{element.prenom}}</td>
+        <td>{{element.nom}}</td>
+        <td>{{element.DateCR}}</td>
+        <td>{{element.Datevisite}}</td>
+        <td>{{element.RemplacantNom}}</td>
+        <td>{{element.Motif}}</td>
+        <td>{{element.CoefConf}}</td>
+        <td>{{element.ImpacteVisite}}</td>
+        <td>boutton</td>
 
       </tr>
 
