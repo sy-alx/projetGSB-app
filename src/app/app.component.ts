@@ -10,7 +10,7 @@ export class AppComponent {
   public appPages = [
     { title: 'Compte rendu', url: '/folder/CompteRendu', icon: 'pencil' },
     { title: 'Consultation', url: '/consultation', icon: 'eye' },
-    { title: 'Voir mes rendez-vous', url: '/folder/MesRdv', icon: 'time' },
+    { title: 'Mes rendez-vous', url: '/planning', icon: 'time' },
     { title: 'Gestion des praticiens', url: '/folder/GestionPraticien', icon: 'person-add' },
     { title: 'informations médicaments', url: '/folder/InformationsMedicaments', icon: 'medkit' }
   ];

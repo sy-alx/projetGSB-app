@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { ConsultationComponent } from './consultation/consultation.component';
+// Guard
 import { AuthGuard } from './guards/auth.guard';
 import { AutoLoginGuard } from './guards/auto-login.guard';
 import { IntroGuard } from './guards/intro.guard';
+//Composants pages
+import { ConsultationComponent } from './consultation/consultation.component';
+import { PlanningComponent } from './planning/planning.component';
 
 const routes: Routes = [
   {
@@ -18,6 +21,11 @@ const routes: Routes = [
       {
         path:"consultation",
         component: ConsultationComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path:"planning",
+        component: PlanningComponent,
         canActivate: [AuthGuard]
       },
       {

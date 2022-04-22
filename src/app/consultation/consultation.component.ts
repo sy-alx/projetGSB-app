@@ -44,11 +44,11 @@ export class ConsultationComponent implements OnInit {
     }}).subscribe(
       (data:Array<ICompteRenduResponse>)=> {  
 
-        data.map((v) => {
-          // console.log(v);
-        })
+        // data.map((v) => {
+        //   // console.log(v);
+        // })
         this.returnedApiData = data;
-        console.log(data);
+        // console.log(data);
 
       }
     )
