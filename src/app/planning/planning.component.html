@@ -13,45 +13,43 @@
 <ion-content [fullscreen]="true">
 
 
-  <!-- <table class="table">
+
+  <table class="table">
     <thead>
       <tr>
-        <th>Prenom</th>
-        <th>Nom</th>
-        <th>Date du compte-rendu</th>
-        <th>Date de visite</th>
-        <th>Remplacant</th>
-        <th>Motif</th>
-        <th>coefconf</th>
-        <th>ImpacteVisite</th>
-        <th>Modifier</th>
-     
+        <th></th>
+          <th *ngFor="let dayIncrement of dayNumbers" class="dateTop">
+            {{CreateWeek(dayIncrement) | date: "dd/MM/YYYY"}}
+          </th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let element of returnedApiData">
-
-        <td>{{element.prenom}}</td>
-        <td>{{element.nom}}</td>
-        <td>{{element.DateCR}}</td>
-        <td>{{element.Datevisite}}</td>
-        <td>{{element.RemplacantNom}}</td>
-        <td>{{element.Motif}}</td>
-        <td>{{element.CoefConf}}</td>
-        <td>{{element.ImpacteVisite}}</td>
-        <td>boutton</td>
-
+      <tr *ngFor="let displayHour of calendarHours">
+        <th class="hourLeft">
+          {{displayHour}} h 
+        </th>
+        <th *ngFor="let dayIncrementString of dayNumbers">
+            <div *ngFor="let element of displayedData">
+              <div *ngIf="CreateWeekString(dayIncrementString) == element.date_rdv && displayHour == element.heure_rdv" class='cellFormCalendar'>
+                <p>{{element.nomPraticien}} {{element.prenomPraticien}}</p>
+                <p>{{element.numero}}</p>
+                <p>{{element.adresse}} {{element.codePostal}}</p>
+              </div>
+            </div>
+        </th>
       </tr>
 
     </tbody>
-  </table> -->
- 
+  </table>
 
+  <button (click)="showPreviousWeek()">Semaine précédente</button>
+  <button (click)="showNextWeek()">Semaine Suivante</button>
+  
 </ion-content>
 
 
-<!-- <button (click)="getCompteRenduList()">Cliquer</button>
-{{returnedApiData}}
- -->
+
+
+
 
 
