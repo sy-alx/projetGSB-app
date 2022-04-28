@@ -48,9 +48,33 @@ export class ConsultationComponent implements OnInit {
         //   // console.log(v);
         // })
         this.returnedApiData = data;
-        // console.log(data);
+        console.log(data);
 
       }
     )
-   }
+  }
+
+  getCompteRenduDetail(element){
+   
+    let tabToFill = ['nom', 'prenom', 'DateCR', 'Datevisite', 'RemplacantNom', 'RemplacantPrenom', 'Motif','ImpacteVisite', 'CoefConf', 'Texte'];
+    let modal = document.getElementById('myModal');
+  
+      this.returnedApiData.map((val) => {
+          if (val['id'] == element){
+            tabToFill.forEach(el => {
+              if(val[el] != null && document.getElementById(el) != null){
+                // document.getElementById(el).innerHTML = val[el];
+                document.getElementById(el).setAttribute('value', val[el])
+              }
+            });
+          }
+        })
+
+      modal.style.display = "block";
+  }
+
+  closeMyModal() {
+    let modal = document.getElementById('myModal');
+    modal.style.display = "none";
+  }
 }

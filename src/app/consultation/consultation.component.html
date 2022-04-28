@@ -37,14 +37,61 @@
         <!-- <td>{{element.Motif}}</td>
         <td>{{element.CoefConf}}</td>
         <td>{{element.ImpacteVisite}}</td> -->
-        <td>boutton</td>
+        <td (click)="getCompteRenduDetail(element.id)">boutton</td>
 
       </tr>
 
     </tbody>
   </table>
- 
 
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span (click)="closeMyModal()" class="close">&times;</span>
+    
+    <div>
+      <label>Praticien</label>
+      <input type="text" id="nom"><input type="text"  id="prenom">
+    </div>
+    
+    <div>
+      <label>Date compte-rendu</label>
+      <input type="text"  id="DateCR">
+    </div>
+
+    <div>
+      <label>Date visite</label>
+      <input type="text"  id="Datevisite">
+    </div>
+
+    <div>
+        <label>Remplaçant</label>
+        <input type="text"  id="RemplacantNom">
+        <input type="text"  id="RemplacantPrenom">
+    </div>
+
+    <div>
+      <label>Motif</label>
+      <input type="text"  id="Motif">
+    </div>
+
+    <div>
+      <label>Compte-rendu de la visite : </label>
+      <input type="text"  id="Texte">
+    </div>
+
+    <div>
+      <label>Impact de la visite</label>
+      <input type="text"  id="ImpacteVisite">
+    </div>
+
+    <div>
+      <label>Coefficient de confiance</label>
+      <input type="text" id="CoefConf">
+    </div>
+
+  </div>
+
+</div>
 </ion-content>
 
 
