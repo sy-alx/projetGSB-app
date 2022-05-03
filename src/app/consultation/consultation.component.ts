@@ -62,7 +62,7 @@ export class ConsultationComponent implements OnInit {
       this.returnedApiData.map((val) => {
           if (val['id'] == element){
             tabToFill.forEach(el => {
-              if(val[el] != null && document.getElementById(el) != null){
+              if(val[el] != null && document.getElementById(el) != null && val['id'] == element){
                 // document.getElementById(el).innerHTML = val[el];
                 document.getElementById(el).setAttribute('value', val[el])
               }

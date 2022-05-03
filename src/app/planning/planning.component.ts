@@ -18,7 +18,7 @@ interface IPlanningResponse {
 }  
 
 @Component({
-  selector: 'app-consultation',
+  selector: 'app-planning',
   templateUrl: './planning.component.html',
   styleUrls: ['./planning.component.scss'],
 })
