@@ -6,43 +6,12 @@
   <ion-buttons slot="start">
     <ion-menu-button></ion-menu-button>
   </ion-buttons>
-  <ion-title>Consultation</ion-title>
+  <ion-title>Compte-rendu</ion-title>
 </ion-toolbar>
 
 
 <ion-content [fullscreen]="true">
   <!-- <table *ngIf="returnedApiData">{{returnedApiData}}</table> -->
-
-  <table id="customers">
-    <thead>
-      <tr>
-        <th>Praticien</th>
-        <th>Date compte-rendu</th>
-        <th>Date visite</th>
-        <th>Remplacant</th>
-        <!-- <th>Motif</th>
-        <th>coefconf</th>
-        <th>ImpacteVisite</th> -->
-        <th>Détails</th>
-     
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let element of returnedApiData">
-
-        <td>{{element.prenom}} {{element.nom}} </td>
-        <td>{{element.DateCR}}</td>
-        <td>{{element.Datevisite}}</td>
-        <td>{{element.RemplacantPrenom}} {{element.RemplacantNom}}</td>
-        <!-- <td>{{element.Motif}}</td>
-        <td>{{element.CoefConf}}</td>
-        <td>{{element.ImpacteVisite}}</td> -->
-        <td (click)="getCompteRenduDetail(element.id)">boutton</td>
-
-      </tr>
-
-    </tbody>
-  </table>
 
 <div id="myModal" class="modal">
   <div class="modal-content">

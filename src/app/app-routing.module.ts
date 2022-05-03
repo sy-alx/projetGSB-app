@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AutoLoginGuard } from './guards/auto-login.guard';
 import { IntroGuard } from './guards/intro.guard';
 //Composants pages
+import {CompteRenduComponent} from './compteRendu/compteRendu.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { PlanningComponent } from './planning/planning.component';
 
@@ -18,6 +19,11 @@ const routes: Routes = [
     path:'',
     component: AppComponent,
     children:[
+      {
+        path:"compteRendu",
+        component: CompteRenduComponent,
+        canActivate: [AuthGuard]
+      },
       {
         path:"consultation",
         component: ConsultationComponent,

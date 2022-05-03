@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Compte rendu', url: '/folder/CompteRendu', icon: 'pencil' },
+    { title: 'Compte rendu', url: '/compteRendu', icon: 'pencil' },
     { title: 'Consultation', url: '/consultation', icon: 'eye' },
     { title: 'Mes rendez-vous', url: '/planning', icon: 'time' },
     { title: 'Gestion des praticiens', url: '/folder/GestionPraticien', icon: 'person-add' },
