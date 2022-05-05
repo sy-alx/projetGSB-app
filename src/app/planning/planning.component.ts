@@ -48,6 +48,10 @@ export class PlanningComponent implements OnInit {
     this.getRdvList();
   }
 
+  reloadCurrentPage(){
+    window.location.reload();
+ }
+
   showPreviousWeek() {
     this.semaine = new Date(this.semaine.setDate(this.semaine.getDate() - 7));
     this.getRdvList();

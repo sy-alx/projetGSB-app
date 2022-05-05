@@ -33,7 +33,7 @@ export class AuthenticationService {
   }
  
   login(credentials: {email, password}): Observable<any> {
-    return this.http.post(environment.apiUrl + '/api/SignIn', credentials).pipe( //link api à faire `${environment.apiUrl}/api/Signin`
+    return this.http.post(environment.apiUrl + '/api/SignIn', credentials).pipe(
       map((data: any) =>  {
         // console.log(data)
         return data.token
