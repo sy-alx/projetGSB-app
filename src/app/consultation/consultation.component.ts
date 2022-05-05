@@ -48,7 +48,7 @@ export class ConsultationComponent implements OnInit {
         //   // console.log(v);
         // })
         this.returnedApiData = data;
-        console.log(data);
+        // console.log(data);
 
       }
     )

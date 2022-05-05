@@ -10,9 +10,8 @@ export class AppComponent {
   public appPages = [
     { title: 'Compte rendu', url: '/compteRendu', icon: 'pencil' },
     { title: 'Consultation', url: '/consultation', icon: 'eye' },
-    { title: 'Mes rendez-vous', url: '/planning', icon: 'time' },
-    { title: 'Gestion des praticiens', url: '/folder/GestionPraticien', icon: 'person-add' },
-    { title: 'informations médicaments', url: '/folder/InformationsMedicaments', icon: 'medkit' }
+    { title: 'Mes rendez-vous', url: '/planning', icon: 'time' }
+    // { title: 'informations médicaments', url: '/folder/InformationsMedicaments', icon: 'medkit' }
   ];
   // public labels = [];
   constructor(private authService: AuthenticationService, private router: Router) {}

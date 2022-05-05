@@ -11,61 +11,134 @@
 
 
 <ion-content [fullscreen]="true">
-  <!-- <table *ngIf="returnedApiData">{{returnedApiData}}</table> -->
 
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span (click)="closeMyModal()" class="close">&times;</span>
-    
-    <div>
-      <label>Praticien</label>
-      <input type="text" id="nom"><input type="text"  id="prenom">
-    </div>
-    
-    <div>
-      <label>Date compte-rendu</label>
-      <input type="text"  id="DateCR">
-    </div>
+<form #form_contact = "ngForm" (ngSubmit) = "onClickSubmit(form_contact.value)">
+  <div id="content-wrapper" class="d-flex flex-column">
+      <div class="card shadow mb-4">
+          <div class="card-body">
+              <div class="row">
+                  <div class="col-md-6">
 
-    <div>
-      <label>Date visite</label>
-      <input type="text"  id="Datevisite">
-    </div>
+                      <div class="form-group">
+                          <label for="start">Date de visite: *</label>
+                          <input type="date" id="DateVisite" name="Datevisite" value="" min="" max="" ngModel required>
+                      </div>
+                      <div class="form-group">
+                          <label for="start">Date de compte rendu: *</label>
+                          <input type="date" id="DateCR" name="DateCR" value="" ngModel required>
+                      </div>
 
-    <div>
-        <label>Remplaçant</label>
-        <input type="text"  id="RemplacantNom">
-        <input type="text"  id="RemplacantPrenom">
-    </div>
 
-    <div>
-      <label>Motif</label>
-      <input type="text"  id="Motif">
-    </div>
 
-    <div>
-      <label>Compte-rendu de la visite : </label>
-      <input type="text"  id="Texte">
-    </div>
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Praticien *</label>
 
-    <div>
-      <label>Impact de la visite</label>
-      <input type="text"  id="ImpacteVisite">
-    </div>
+                          <select class="form-control" id="Praticien" name="Praticien" ngModel required>
 
-    <div>
-      <label>Coefficient de confiance</label>
-      <input type="text" id="CoefConf">
-    </div>
+                              <option value="">-- Sélection --</option>
+                              <option *ngFor="let praticien of dataPraticien" value="{{praticien.id}}">{{praticien.nom}} {{praticien.prenom}}</option>
+                          </select>
+                      </div>
 
+
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Remplaçant *</label>
+
+                          <select class="form-control" id="Remplacant" name="Remplacant" ngModel required>
+
+                              <option value="">-- Sélection --</option>
+                       
+                              <option *ngFor="let remplacant of dataRemplacant" value="{{remplacant.id}}">{{remplacant.nomRemplacant}} {{remplacant.prenomRemplacant}}</option>
+                          </select>
+                      </div>
+
+
+
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Impact visite sur 10 *</label> <br />
+
+                          <input type="number" id="ImpacteVisite" name="ImpacteVisite" min="1" max="10" ngModel required>
+
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Coefficient de confiance sur 10 *</label> <br />
+
+                          <input type="number" id="CoefConf" name="CoefConf" min="1" max="10" ngModel required>
+
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Echantillons médicament</label>
+
+                          <select class="form-control" id="idEchantillon" name="idEchantillon" ngModel>
+
+                              <option value="">-- Sélection --</option>
+                              <option *ngFor="let medicament of dataMedicament" value="{{medicament.id}}">{{medicament.MED_NOMCOMMERCIAL}}</option>
+                          </select>
+                          <label for="exampleFormControlSelect1">Nombre donné </label>
+                          <input type="number" id="MED_NOMBRECHANTILLON" name="MED_NOMBRECHANTILLON">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="exampleFormControlSelect1">Motif de la visite *</label>
+
+                          <select class="form-control" id="MotifVisite" name="MotifVisite" ngModel required>
+
+                              <option value="">-- Sélection --</option>
+                              <option *ngFor="let motif of dataMotif" value="{{motif.id}}">{{motif.motif}}</option>
+                          </select>
+                      </div>
+
+                      <div class="form-group">
+                          <label>Date prochaine visite :</label>
+                          <input type="date" id="dateRdv" name="dateRdv" ngModel>
+                          <input type="number" id="heureRdv" name="heureRdv" min="8" max="18" ngModel>h
+                      </div>
+
+                    
+                      <div class="form-group">
+                              <label for="exampleFormControlSelect1">Compte rendu de la visite : *</label>
+                              <textarea class="form-control" id="texte" rows="3" name="texte" ngModel required></textarea>
+                          
+                      </div>
+
+
+
+
+                      <div class="form-check form-check-inline">
+
+                          <div class="col-sm-6 col-md-6 col-lg-6">
+                              <div class="btn btn-danger btn-icon-split">
+                              <span class="icon text-white-50">
+                                  <i class="fas fa-trash"></i>
+                              </span>
+                                  <button class="btn btn__rounded btn__primary btn__hover3"  type="reset" >Rafraîchir</button>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                          <div class="col-sm-6 col-md-6 col-lg-6">
+                              <div class="btn btn-success btn-icon-split">
+                              <span class="icon text-white-50">
+                                  <i class="fas fa-paper-plane"></i>
+                              </span>
+                                  <button type="submit" value="submit" class="btn btn__rounded btn__primary btn__hover3">Envoyer</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-
-</div>
+</form>
 </ion-content>
 
-
-<!-- <button (click)="getCompteRenduList()">Cliquer</button>
-{{returnedApiData}}
- -->
 
 
