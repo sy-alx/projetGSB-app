@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://localhost"
+  apiUrl: "https://projetgsb2022.000webhostapp.com"
 };
