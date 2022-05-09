@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://projetgsb2022.000webhostapp.com"
+  apiUrl: "https://projetgsb.maximechostak.fr"
 };
 
 /*
