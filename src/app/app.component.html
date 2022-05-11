@@ -7,7 +7,7 @@
           <ion-note>Gestion des comptes rendus</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+            <ion-item style="pointer-events: auto !important;" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label>{{ p.title }}</ion-label>
             </ion-item>
@@ -22,7 +22,7 @@
             <ion-label>{{ label }}</ion-label>
           </ion-item>
         </ion-list> -->
-        <ion-button expand="full" (click)="logout()">Logout</ion-button>
+        <ion-button expand="full" (click)="logout()" style="pointer-events: auto !important;">Logout</ion-button>
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>
