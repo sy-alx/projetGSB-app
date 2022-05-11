@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://projetgsb.maximechostak.fr"
+  apiUrl: "https://projetgsb.maximechostak.fr"
 };
