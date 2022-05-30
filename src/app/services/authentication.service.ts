@@ -39,6 +39,7 @@ export class AuthenticationService {
         return data.token
       }),
       switchMap(token => {
+        this.token = token;
         return from(Storage.set({key: TOKEN_KEY, value: token}));
       }),
       tap(_ => {
